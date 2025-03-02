@@ -9,6 +9,15 @@ all: llrec-test
 #-----------------------------------------------------
 
 
+llrec-test: llrec.o
+	$(CXX) $(CXXFLAGS) -o llrec-test llrec.o
+
+llrec-test.o: llrec-test.cpp llrec.h
+	$(CXX) $(CXXFLAGS) -c llrec-test.cpp
+
+llrec.o: llrec.cpp llrec.h
+	$(CXX) $(CXXFLAGS) -c llrec.cpp
+
 clean:
 	rm -f *.o rh llrec-test *~
 
